@@ -201,8 +201,10 @@ async def usergame(ctx, member: discord.Member):
                 await ctx.send_response(file=discord.File(file, "result.txt"), ephemeral=True)
             os.remove("temp\\user_game.txt")
         else:
+            print(result)
             await ctx.send_response(result, ephemeral=True)
     else:
+        print(f"{member.mention} 님은 활동 중이지 않습니다.")
         await ctx.send_response(f"{member.mention} 님은 활동 중이지 않습니다.", ephemeral=True)
         
 @client.command(description="[DEBUG] 멤버들의 활동을 확인합니다.")
